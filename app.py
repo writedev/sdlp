@@ -19,8 +19,6 @@ class AudioFormat(StrEnum):
 
 class VideoFormat(StrEnum):
     MP4 = "mp4"
-    MOV = "mov"
-    MKV = "mkv"
 
 
 class EveryFormat(StrEnum):
@@ -30,7 +28,6 @@ class EveryFormat(StrEnum):
     M4A = "m4a"
     # Video Format
     MP4 = "mp4"
-    MKV = "mkv"
 
 
 @app.command()
@@ -73,8 +70,8 @@ def download(
             format_opts = {
                 # "format": "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
                 # "format": "bv*[vcodec^=avc1]+ba[acodec^=mp4a]/b",
-                "merge_output_format": format.value,
                 "format": "bestvideo*+bestaudio/best",
+                "merge_output_format": format.value,
             }
 
     if random_number:
