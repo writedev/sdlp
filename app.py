@@ -30,7 +30,6 @@ class EveryFormat(StrEnum):
     M4A = "m4a"
     # Video Format
     MP4 = "mp4"
-    MOV = "mov"
     MKV = "mkv"
 
 
@@ -69,36 +68,6 @@ def download(
                 # "format": "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
                 "format": "worstvideo*+worstaudio/worst",
                 "merge_output_format": format.value,
-            }
-        elif format.value == "mov":
-            # console.print(Panel.fit("[red]Are you sure ? [/red]", style="red"))
-
-            mov_confirmation = Confirm.ask(
-                ":warning: [bold red]This will be take long because this re encode entire video[/bold red] :warning:"
-            )
-
-            if not mov_confirmation:
-                console.print("Good decision to save time.")
-                raise typer.Exit()
-            format_opts = {
-                "format": "bestvideo+bestaudio/best",
-                "merge_output_format": "mov",
-                "postprocessor_args": {
-                    "ffmpeg": [
-                        "-c:v",
-                        "libx264",
-                        "-pix_fmt",
-                        "yuv420p",
-                        "-profile:v",
-                        "high",
-                        "-level",
-                        "4.2",
-                        "-c:a",
-                        "aac",
-                        "-b:a",
-                        "192k",
-                    ]
-                },
             }
         else:
             format_opts = {
