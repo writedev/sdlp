@@ -1,3 +1,3 @@
 from yt_dlp import _Params
 
-ytoption: _Params = {"cookiesfrombrowser" : "firefox"}
+test_opts: _Params = {"postprocessor_args"}
