@@ -26,6 +26,7 @@ progress = Progress(
     TimeElapsedColumn(),
     transient=True,
     console=console,
+    expand=True,
 )
 
 task_1 = progress.add_task("[bold]Downloading...[/bold]")
@@ -43,9 +44,8 @@ def progress_downloading(d: dict):
             total=total,
             completed=downloaded,
         )
-
     if d["status"] == "finished":
-        progress.stop_task(task_1)
+        progress.stop()
         console.print("[green]The Downloading is finished ! [/green]")
 
 
