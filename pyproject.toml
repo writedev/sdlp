@@ -23,7 +23,6 @@ requires-python = ">=3.13"
 dependencies = [
     "curl-cffi>=0.14.0",
     "ffmpeg>=1.4",
-    "pytest>=9.0.2",
     "rich>=14.3.2",
     "typer>=0.21.1",
     "yt-dlp>=2026.2.4",
@@ -31,10 +30,10 @@ dependencies = [
 
 
 [project.scripts]
-sdlp = "sdlp:app"
+sdlp = "src:app"
 
 [tool.setuptools.dynamic]
-version = {attr = "sdlp.__version__"}
+version = {attr = "src.__version__"}
 
 [project.urls]
 repository = "https://github.com/writedev/Sdlp"
