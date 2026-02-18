@@ -148,9 +148,7 @@ def download(
             ydl.download(url)
     except Exception as e:
         logging.error(e)
-        console.print(
-            "There error report to https://github.com/writedev/simple-yt-dlp-cli/issues"
-        )
+        console.print("There error report to https://github.com/writedev/Sdlp/issues")
 
 
 @app.command()
