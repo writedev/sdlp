@@ -30,10 +30,10 @@ dependencies = [
 
 
 [project.scripts]
-sdlp = "src:app"
+sdlp = "sdlp:app"
 
 [tool.setuptools.dynamic]
-version = {attr = "src.__version__"}
+version = {attr = "sdlp.__version__"}
 
 [project.urls]
 repository = "https://github.com/writedev/Sdlp"
